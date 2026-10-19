@@ -1,0 +1,91 @@
+{
+  "title": "TempoFold · Workshop planner",
+  "shortDescription": "Plan the workshop. Protect important blocks. Preview exact cuts when time runs short. Local-first, with free MIT source.",
+  "type": "Tool",
+  "descriptionFile": "description.md",
+  "liveDemoUrl": "https://aryarashid.github.io/tempofold/",
+  "repositoryUrl": "https://github.com/aryarashid/tempofold",
+  "releaseUrl": "https://github.com/aryarashid/tempofold/releases/tag/v1.1.0",
+  "techStack": [
+    "javascript",
+    "html",
+    "css"
+  ],
+  "domains": [
+    "Productivity",
+    "Education"
+  ],
+  "documentation": "Full",
+  "maintenance": "None",
+  "faq": [
+    {
+      "question": "What is TempoFold best for?",
+      "answer": "Planning and running a workshop, timed product rehearsal or community session on one device. Three synthetic examples are included. It is designed for a facilitator who wants to see exact proposed cuts before changing an agenda."
+    },
+    {
+      "question": "How does time recovery work?",
+      "answer": "Choose minutes to recover. TempoFold shortens eligible future flexible blocks in agenda order, stopping at each minimum. Protected, current and completed blocks keep their duration. Review before-and-after values before Apply. Impossible requests show exact unresolved time. Undo restores the previous agenda until you advance, edit, replace the agenda or reset the timer."
+    },
+    {
+      "question": "How do I run it?",
+      "answer": "Open the hosted planner in a modern browser. To run locally, install Node.js 22 or later, run npm ci, then npm start. No build step, backend, account or paid API is required. Public static hosting needs HTTPS for service workers."
+    },
+    {
+      "question": "Does it work offline, and where is my data?",
+      "answer": "After a successful first load and service-worker installation, app files cache for offline use. Check the status before disconnecting. Workshop data stays in this browser’s local storage. Browser data or caches can be cleared or evicted. Export JSON for a backup; there is no cloud sync."
+    },
+    {
+      "question": "What happens when I pause or reload?",
+      "answer": "The timer saves timestamps and restores after reload. A running timer includes elapsed time during device sleep. Pause stops the block timer while the finish target remains fixed, so a pause can add delay. Advance to the next block yourself. Keep the device clock accurate."
+    },
+    {
+      "question": "What can I import, export and print?",
+      "answer": "Import validated JSON from a file or paste. Limits: 1–100 blocks, 24 hours total, four hours per block and 512 KB UTF-8. Export contains the agenda, not live timer history. Print includes planning times, categories, notes, minimums and protected status."
+    },
+    {
+      "question": "Can I use it with a team or multiple devices?",
+      "answer": "Use one tab on one device for each workshop. There is no collaboration, calendar integration, cloud backup, broadcast output, audio alarm or remote control. Export and import JSON to move an agenda between devices."
+    },
+    {
+      "question": "What accessibility support is included?",
+      "answer": "The interface provides visible keyboard focus, labeled inputs, named dialogs and text status labels. Tab, Enter, Space and Escape support the main flow. The timer can be read on demand and does not announce every second. Mobile-layout and keyboard checks are documented; no independent assistive-technology audit is claimed."
+    },
+    {
+      "question": "What license and support are included?",
+      "answer": "Original code, examples and artwork are MIT licensed. Hanken Grotesk font and outlined lettering retain SIL OFL 1.1; keep the bundled notices. Support is through GitHub issues and community contributions. No paid support, maintenance commitment or response-time promise is included."
+    }
+  ],
+  "images": [
+    {
+      "file": "images/01-cover.jpg",
+      "alt": "Actual TempoFold planner with a synthetic workshop and facilitator timer.",
+      "width": 1600,
+      "height": 900
+    },
+    {
+      "file": "images/02-recovery.jpg",
+      "alt": "Actual seven-minute recovery preview: five minutes from Explore possibilities and two from Take a breath.",
+      "width": 1600,
+      "height": 900
+    },
+    {
+      "file": "images/03-planning.jpg",
+      "alt": "Actual block editor showing notes, duration, minimum and protected setting.",
+      "width": 1600,
+      "height": 900
+    },
+    {
+      "file": "images/04-timer.jpg",
+      "alt": "Actual timer showing overtime during a synthetic rehearsal.",
+      "width": 1600,
+      "height": 900
+    },
+    {
+      "file": "images/05-run-sheet.jpg",
+      "alt": "Actual print layout with all six synthetic workshop blocks and facilitator notes.",
+      "width": 1600,
+      "height": 900
+    }
+  ],
+  "publicationNotes": "No price field is provided. Verify Arya’s personal account before edits. Do not accept marketplace agreements or publish until the free/open-source route and legal acceptance are resolved."
+}

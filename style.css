@@ -1,5 +1,12 @@
+@font-face {
+  font-family:"Hanken Grotesk";
+  src:url("./assets/fonts/HankenGrotesk.ttf") format("truetype");
+  font-style:normal;
+  font-weight:100 900;
+  font-display:swap;
+}
 :root {
-  font-family:"Avenir Next","Segoe UI",system-ui,sans-serif;
+  font-family:"Hanken Grotesk","Avenir Next","Segoe UI",system-ui,sans-serif;
   color:#182c47;
   background:#fff;
   font-size:16px;
@@ -106,6 +113,11 @@ svg {
 .brand svg {
   width:30px;
   height:30px;
+}
+.brand img {
+  display:block;
+  width:190px;
+  height:40px;
 }
 .tagline {
   font-size:.9rem;
@@ -706,6 +718,10 @@ th:not(:first-child),td:not(:first-child) {
   }
   .brand {
     font-size:1.3rem;
+  }
+  .brand img {
+    width:150px;
+    height:auto;
   }
   .topbar>button {
     font-size:.8rem;

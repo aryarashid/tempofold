@@ -6,9 +6,9 @@ TempoFold is original MIT-licensed software by Arya Rashid, built with AI assist
 
 [Open the live demo](https://aryarashid.github.io/tempofold/) or [browse the source](https://github.com/aryarashid/tempofold).
 
-![TempoFold planner with a synthetic workshop agenda](./docs/screenshots/planner.jpg)
+![TempoFold: running late? See what can flex. Actual planner with a synthetic workshop.](./marketplace/images/01-cover.jpg)
 
-![Recovery preview showing exact future-block cuts](./docs/screenshots/recovery.jpg)
+Browse the [five-image product gallery](./brand/) and [downloadable brand kit](./brand/README.md). Every product image uses an actual screen with synthetic example content.
 
 ## Run it
 
@@ -53,6 +53,8 @@ The project focuses on transparent constrained recovery in a small offline brows
 
 ## License and contributions
 
-Original source, examples and icon use the [MIT license](./LICENSE). There are no bundled third-party packages, fonts, images or copied templates. See [THIRD_PARTY_NOTICES.md](./THIRD_PARTY_NOTICES.md). The lockfile records the zero-dependency project. No GPL Ontime code or CC-BY-SA canvas material is included.
+Original source, examples and artwork use the [MIT license](./LICENSE). The bundled Hanken Grotesk font and outlined wordmark lettering retain the SIL Open Font License 1.1. See [THIRD_PARTY_NOTICES.md](./THIRD_PARTY_NOTICES.md) and the [font license](./assets/fonts/OFL.txt). There are no npm runtime dependencies or copied templates. The lockfile records the zero-dependency project. No GPL Ontime code or CC-BY-SA canvas material is included.
+
+Setup and product behavior are documented here. The [architecture guide](./docs/architecture.md) explains storage, timer behavior, deployment and rollback. The [listing package](./marketplace/README.md) contains factual copy, FAQs and upload-ready artwork. Support is through GitHub issues and community contributions, with no response-time promise or paid support agreement.
 
 Contributions should include a behavior test for timing, recovery or import changes. Keep original work and its notices attributable. Do not add telemetry or cloud services without an explicit product decision. Report security issues privately to the repository owner before publishing sensitive details.

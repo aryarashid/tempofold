@@ -15,3 +15,11 @@ Responsive checks found document widths exactly matching the 320- and 390-pixel 
 The print stylesheet and an actual browser-generated PDF were visually inspected. All six workshop blocks, notes, minimums and ending time fit without clipping on the first page. Screenshots are in [screenshots](./screenshots).
 
 Cached offline reload was tested by stopping this project's local server and verifying that HTTP requests to it failed. Reload still rendered the current product-demo agenda and restored its running timer at the expected elapsed time. Pausing still worked. This verifies reloadable offline use after cache installation in the tested Chrome profile. It does not prove first-visit offline access or immunity to browser cache eviction.
+
+## Version 1.1.0 branding checks
+
+All 16 automated tests passed again. The timer and recovery implementation is unchanged. Browser checks repeated seven-minute recovery with two exact cuts, Apply from 60 to 53 minutes, Undo to 60, actual overtime, and paused reload. Keyboard Enter opened help and Escape closed it. The branded planner had no horizontal overflow at 320 and 390 pixels. The print gallery uses the real print stylesheet and all six synthetic workshop blocks.
+
+The five gallery images are 1600 × 900 JPEG files, each below the marketplace's 5 MB limit. Source captures show actual UI with synthetic data. App icons were rendered from the original SVG at 180, 192 and 512 pixels. The Hanken Grotesk variable font comes from the official Google Fonts repository and retains its bundled SIL OFL license and notices.
+
+On a fresh local origin, the final font and wordmark loaded successfully. After stopping that origin's server and confirming connection failure, browser reload still rendered the planner, loaded the wordmark and reported Hanken Grotesk available. This checks the new assets in cached offline use. The separate online brand gallery is not promised to cache offline.
