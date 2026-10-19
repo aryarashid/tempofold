@@ -4,6 +4,8 @@ Plan and run a workshop on one device. When it runs late, preview exactly which 
 
 TempoFold is original MIT-licensed software by Arya Rashid, built with AI assistance. It has no runtime dependencies, account, backend, paid API, analytics or cloud uploads. All examples are synthetic.
 
+[Open the live demo](https://aryarashid.github.io/tempofold/) or [browse the source](https://github.com/aryarashid/tempofold).
+
 ![TempoFold planner with a synthetic workshop agenda](./docs/screenshots/planner.jpg)
 
 ![Recovery preview showing exact future-block cuts](./docs/screenshots/recovery.jpg)
