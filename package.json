@@ -1,0 +1,14 @@
+{
+  "name": "tempofold",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "A local-first workshop planner with transparent overrun recovery.",
+  "license": "MIT",
+  "scripts": {
+    "start": "node server.mjs",
+    "test": "node --test test/*.test.js",
+    "check": "node --check src/core.js && node --check src/app.js && node --check sw.js && node --check server.mjs && npm test"
+  },
+  "engines": {"node": ">=22"}
+}

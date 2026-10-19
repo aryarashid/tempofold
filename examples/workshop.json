@@ -1,0 +1,61 @@
+{
+  "schemaVersion": 1,
+  "title": "From ideas to a shared plan",
+  "startTime": "09:00",
+  "blocks": [
+    {
+      "id": "work-welcome",
+      "title": "Arrive and align",
+      "category": "Welcome",
+      "duration": 300,
+      "minimum": 300,
+      "protected": true,
+      "notes": "Welcome everyone. Explain the decision we need to make and the ending time."
+    },
+    {
+      "id": "work-frame",
+      "title": "Frame the challenge",
+      "category": "Present",
+      "duration": 600,
+      "minimum": 420,
+      "protected": false,
+      "notes": "Share the fictional project brief. Clarify the problem before suggesting solutions."
+    },
+    {
+      "id": "work-ideas",
+      "title": "Explore possibilities",
+      "category": "Activity",
+      "duration": 900,
+      "minimum": 600,
+      "protected": false,
+      "notes": "Write ideas silently, then discuss in pairs. If shortened, collect one idea per person."
+    },
+    {
+      "id": "work-break",
+      "title": "Take a breath",
+      "category": "Break",
+      "duration": 300,
+      "minimum": 180,
+      "protected": false,
+      "notes": "Offer a quiet pause. Adjust for participants’ access needs before shortening the break."
+    },
+    {
+      "id": "work-decide",
+      "title": "Choose the next experiment",
+      "category": "Discuss",
+      "duration": 900,
+      "minimum": 600,
+      "protected": false,
+      "notes": "Compare options against the goal. Agree on one small experiment."
+    },
+    {
+      "id": "work-close",
+      "title": "Commit and close",
+      "category": "Closing",
+      "duration": 600,
+      "minimum": 600,
+      "protected": true,
+      "notes": "Record an owner, a next step and a date. Give each person space for a final reflection."
+    }
+  ]
+}

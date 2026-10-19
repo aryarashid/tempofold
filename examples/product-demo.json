@@ -1,0 +1,43 @@
+{
+  "schemaVersion": 1,
+  "title": "Product demo",
+  "startTime": "10:00",
+  "blocks": [
+    {
+      "id": "demo-welcome",
+      "title": "Set the scene",
+      "category": "Welcome",
+      "duration": 60,
+      "minimum": 60,
+      "protected": true,
+      "notes": "Name the audience and the problem. All product details in this example are fictional."
+    },
+    {
+      "id": "demo-walk",
+      "title": "Show the main workflow",
+      "category": "Present",
+      "duration": 300,
+      "minimum": 180,
+      "protected": false,
+      "notes": "Walk through one complete task. Skip optional settings if time is short."
+    },
+    {
+      "id": "demo-questions",
+      "title": "Questions and discussion",
+      "category": "Discuss",
+      "duration": 240,
+      "minimum": 120,
+      "protected": false,
+      "notes": "Take questions about the demonstrated workflow. Park unrelated questions for follow-up."
+    },
+    {
+      "id": "demo-close",
+      "title": "Close with the next step",
+      "category": "Closing",
+      "duration": 120,
+      "minimum": 120,
+      "protected": true,
+      "notes": "Summarize what was shown. Agree on one next step and its owner."
+    }
+  ]
+}

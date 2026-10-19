@@ -1,0 +1,43 @@
+{
+  "schemaVersion": 1,
+  "title": "Community listening session",
+  "startTime": "18:00",
+  "blocks": [
+    {
+      "id": "community-open",
+      "title": "Welcome and agreements",
+      "category": "Welcome",
+      "duration": 300,
+      "minimum": 300,
+      "protected": true,
+      "notes": "Introduce the fictional session. Explain respectful participation and how notes will be used."
+    },
+    {
+      "id": "community-stories",
+      "title": "Hear local perspectives",
+      "category": "Discuss",
+      "duration": 900,
+      "minimum": 600,
+      "protected": false,
+      "notes": "Invite a range of voices. Use a visible speaking order and allow people to pass."
+    },
+    {
+      "id": "community-map",
+      "title": "Map shared priorities",
+      "category": "Activity",
+      "duration": 900,
+      "minimum": 600,
+      "protected": false,
+      "notes": "Group themes on paper. Ask what is missing before choosing priorities."
+    },
+    {
+      "id": "community-close",
+      "title": "Read back and close",
+      "category": "Closing",
+      "duration": 600,
+      "minimum": 600,
+      "protected": true,
+      "notes": "Read back the priorities. Explain the next meeting and how participants can correct the notes."
+    }
+  ]
+}

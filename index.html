@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="theme-color" content="#182c47">
+  <meta name="description" content="Plan and run a workshop. Preview what can flex when time runs short, protect the ending, and keep your agenda on your device.">
+  <title>TempoFold · workshop planner</title>
+  <link rel="icon" href="./icon.svg" type="image/svg+xml">
+  <link rel="manifest" href="./manifest.webmanifest">
+  <link rel="stylesheet" href="./style.css">
+  <script type="module" src="./src/app.js"></script>
+</head>
+<body>
+  <a class="skip" href="#workspace">Skip to agenda</a>
+  <header class="topbar">
+    <a href="./" class="brand" aria-label="TempoFold home"><svg viewBox="0 0 32 32" aria-hidden="true"><path d="M3 6h26L19 16l10 10H3l10-10Z" fill="currentColor"/><path d="M13 16h6" stroke="white" stroke-width="2"/></svg>TempoFold</a>
+    <span class="tagline">A little room to flex.</span>
+    <button id="help" class="quiet">How it works</button>
+  </header>
+  <div id="notice" class="notice" role="status" hidden></div>
+  <div id="storage-actions" class="notice" hidden></div>
+  <main id="workspace">
+    <div class="intro"><div><h1>Make time for the ending.</h1><p>Plan the flow. Run the room. See what can flex when you run late.</p></div><span id="save-status" class="save-status">Saved on this device</span></div>
+    <div class="toolbar" aria-label="Agenda tools">
+      <label class="example-label">Start with an example<select id="examples"><option value="">Choose an agenda…</option><option value="0">12-minute product demo</option><option value="1">60-minute workshop</option><option value="2">45-minute community session</option><option value="blank">Blank agenda</option></select></label>
+      <div class="file-tools"><button id="import" class="quiet">Import JSON</button><button id="export" class="quiet">Export JSON</button><button id="print" class="quiet">Print run sheet</button></div>
+      <input type="file" id="import-file" accept=".json,application/json" hidden>
+    </div>
+    <div class="workspace-grid">
+      <section class="agenda" aria-labelledby="agenda-title">
+        <div class="agenda-heading"><div><p class="context">Your run of show</p><h2 id="agenda-title"></h2><p id="agenda-meta"></p></div><button id="edit-agenda" class="quiet">Edit details</button></div>
+        <div id="time-rail" class="time-rail" aria-hidden="true"></div>
+        <p class="legend"><span class="protected-key"></span>Protected keeps its time <span class="flex-key"></span>Flexible can shrink to its minimum</p>
+        <ol id="blocks" class="blocks"></ol>
+        <button id="add-block" class="add-block">+ Add a block</button>
+        <p id="edit-hint" class="muted">Edit the agenda before starting. Changes save automatically on this device.</p>
+      </section>
+      <aside class="live-panel" aria-labelledby="live-heading">
+        <div class="live-heading"><h2 id="live-heading">Facilitator timer</h2><span id="session-state" class="pill">Ready</span></div>
+        <p id="current-label" class="current-label"></p>
+        <div id="countdown" class="countdown" role="timer" aria-live="off">00:00</div>
+        <p id="timer-caption" class="timer-caption"></p>
+        <div class="timer-progress" aria-hidden="true"><span id="timer-progress"></span></div>
+        <div class="timer-actions"><button id="start-pause" class="primary">Start workshop</button><button id="next" class="secondary" hidden>Next block</button></div>
+        <p id="timer-notes" class="timer-notes"></p>
+        <dl class="finish-times"><div><dt>Target finish</dt><dd id="target-finish">At start</dd></div><div><dt>Projected finish</dt><dd id="projected-finish">At start</dd></div></dl>
+        <p id="timing-status" class="timing-status"></p>
+        <p id="pause-note" class="muted small" hidden>Pausing stops this block’s timer. The target finish stays fixed, so breaks still affect the projected finish.</p>
+        <div class="recovery-callout"><h3>Keep the ending intact.</h3><p id="recovery-hint">Preview a shorter agenda. Only future flexible blocks can change.</p><button id="recover" class="secondary">Preview recovery</button><button id="undo" class="quiet" hidden>Undo last recovery</button></div>
+        <div class="session-tools"><button id="rehearse" class="quiet">Try a 7-minute delay</button><button id="reset-session" class="quiet" hidden>Reset timer</button></div>
+        <p class="device-note"><span id="offline-status">Checking offline availability…</span><br>One device. No account. No uploads.</p>
+      </aside>
+    </div>
+    <section id="print-sheet" class="print-sheet" aria-label="Printable facilitator run sheet"></section>
+  </main>
+  <footer><span>TempoFold 1.0 · Original open-source software by Arya Rashid, built with AI assistance.</span><a href="./README.md">Guide & limitations</a><span>MIT licensed</span></footer>
+  <dialog id="import-dialog"><form id="paste-import-form"><div class="dialog-heading"><h2>Import an agenda.</h2><button type="button" class="icon-button" data-close="import-dialog" aria-label="Close import">×</button></div><p>Choose a TempoFold JSON file or paste its contents below. Your current agenda stays intact until validation succeeds and you confirm replacement.</p><button id="choose-file" class="secondary" type="button">Choose JSON file</button><label class="field">Or paste agenda JSON<textarea id="import-text" rows="8" spellcheck="false" maxlength="524288" placeholder='{"schemaVersion":1,…}'></textarea></label><p id="import-error" class="error" role="alert"></p><div class="dialog-actions"><button type="button" class="quiet" data-close="import-dialog">Cancel</button><button type="submit" class="primary">Validate pasted JSON</button></div></form></dialog>
+  <dialog id="editor"><form id="editor-form"><div class="dialog-heading"><h2 id="editor-heading">Edit block</h2><button type="button" class="icon-button" data-close="editor" aria-label="Close editor">×</button></div><div id="editor-fields"></div><p id="editor-error" class="error" role="alert"></p><div class="dialog-actions"><button type="button" class="quiet" data-close="editor">Cancel</button><button type="submit" class="primary">Save changes</button></div></form></dialog>
+  <dialog id="recovery"><div class="dialog-heading"><h2>Find room to recover.</h2><button class="icon-button" data-close="recovery" aria-label="Close recovery preview">×</button></div><p>Future flexible blocks shorten in agenda order, down to their minimums. Protected, current and completed blocks keep their time.</p><form id="recovery-form" class="recovery-form"><label for="recover-minutes">Minutes to recover</label><div><input id="recover-minutes" type="number" min="0.0166666667" max="1440" step="any" inputmode="decimal" required><button class="secondary" type="submit">Update preview</button></div></form><p id="recovery-summary" role="status"></p><div class="table-wrap"><table id="recovery-table"><caption class="sr-only">Proposed duration changes</caption><thead><tr><th scope="col">Future block</th><th scope="col">Before</th><th scope="col">After</th><th scope="col">Recovered</th></tr></thead><tbody id="recovery-rows"></tbody></table></div><p id="recovery-explanation" class="muted small"></p><p class="muted small">The timer keeps its current state while you review. Apply uses exactly these cuts. Any time spent reviewing can add further delay.</p><div class="dialog-actions"><button class="quiet" data-close="recovery">Cancel</button><button id="apply-recovery" class="primary">Apply these changes</button></div></dialog>
+  <dialog id="confirm"><div class="dialog-heading"><h2 id="confirm-title">Replace this agenda?</h2><button class="icon-button" data-close="confirm" aria-label="Close confirmation">×</button></div><p id="confirm-message"></p><div class="dialog-actions"><button class="quiet" data-close="confirm">Keep current work</button><button id="confirm-action" class="primary">Replace agenda</button></div></dialog>
+  <dialog id="help-dialog"><div class="dialog-heading"><h2>A plan with room to flex.</h2><button class="icon-button" data-close="help-dialog" aria-label="Close help">×</button></div><p>Start with a synthetic example or a blank agenda. Give each block a duration, notes and a category. Protect blocks that must keep their time. Set minimums for everything that can flex.</p><h3>When the room runs late</h3><p>Open recovery, choose how many minutes to reclaim and review the proposed changes. Apply shortens only future flexible blocks, in agenda order. If there is not enough room, TempoFold shows the exact unresolved time. Undo is available until you advance to the next block or reset the timer.</p><h3>Timer behavior</h3><p>Start workshop sets a fixed finish target from the agenda’s total duration. The planning start time is for the run sheet only. The timer uses timestamps and continues across background tabs, device sleep and reload. It never moves to the next block by itself. Pausing stops the block timer without moving the finish target. Keep the device clock accurate.</p><h3>Your work stays here</h3><p>The current agenda and timer save in this browser’s local storage. Export JSON for a portable backup. Imports and example changes require confirmation before replacing your agenda. Export contains the agenda, not live timer history. Do not run this agenda in multiple tabs. Browser data can be cleared by your browser or device.</p><p id="help-offline">Offline use is available after this app has cached its files. Check the status below the timer before disconnecting. A first visit needs a connection.</p><p>Keyboard: Tab moves through controls, Enter activates buttons, and Escape closes dialogs. No global timer shortcuts interrupt typing. Screen readers can read the timer on demand; it does not announce every second.</p><button class="primary" data-close="help-dialog">Back to the agenda</button></dialog>
+  <noscript>TempoFold needs JavaScript to edit agendas and run the timer. It has no server account or cloud storage.</noscript>
+</body>
+</html>
