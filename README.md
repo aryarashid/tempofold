@@ -6,9 +6,9 @@ TempoFold is original MIT-licensed software by Arya Rashid, built with AI assist
 
 [Open the live demo](https://aryarashid.github.io/tempofold/) or [browse the source](https://github.com/aryarashid/tempofold).
 
-![TempoFold: running late? See what can flex. Actual planner with a synthetic workshop.](./marketplace/images/01-cover.jpg)
+![TempoFold: running late? See what can flex. Actual planner with a synthetic workshop.](./marketplace/images/01-cover.jpg?v=promo1)
 
-Browse the [five-image product gallery](./brand/) and [downloadable brand kit](./brand/README.md). Every product image uses an actual screen with synthetic example content.
+Browse the [product and social image gallery](./marketplace/), [all nine images on one contact sheet](./marketplace/contact-sheet.jpg), or the [brand kit](./brand/README.md). Five listing images, a protected-time panel and three social formats use actual screens with synthetic examples.
 
 ## Run it
 

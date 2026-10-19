@@ -1,14 +1,7 @@
-const slides={
-  cover:{title:'Running late?\nSee what\ncan flex.',description:'Plan your workshop. Run the timer. Preview exact recovery cuts before changing the agenda.',footnote:'A local-first planner with protected blocks, explicit minimums and a fixed finish target.',image:'planner.jpg',alt:'Actual TempoFold planner showing a synthetic 60-minute workshop and facilitator timer.',caption:'Actual product screenshot. All example agendas are synthetic.'},
-  recovery:{title:'Recover time.\nKeep the\nimportant parts.',description:'Review every proposed cut. Future flexible blocks shorten only as far as their minimums.',footnote:'Protected, current and completed blocks stay intact. Impossible requests show unresolved time.',image:'recovery.jpg',alt:'Actual recovery dialog proposing five minutes from Explore possibilities and two minutes from Take a breath.',caption:'Synthetic workshop. Seven minutes requested; two exact future-block changes.'},
-  planning:{title:'Build a plan\nyou can\nactually run.',description:'Set durations, categories and facilitator notes. Decide what can flex before the room fills up.',footnote:'Start with a 12-minute demo, 60-minute workshop or 45-minute community session. Or build your own.',image:'editor.jpg',alt:'Actual block editor with title, category, duration, minimum, protected setting and notes.',caption:'Actual block editor. Example content is synthetic.'},
-  timer:{title:'Stay with\nthe room.\nKeep time\nin view.',description:'Pause, resume and advance deliberately. See overtime and the projected finish without hiding the delay.',footnote:'The timer uses saved timestamps and restores across reload. Pausing keeps the finish target fixed.',image:'timer.jpg',alt:'Actual facilitator timer with overtime, target and projected finish, and recovery controls.',caption:'Actual timer in a synthetic rehearsal. No customer outcome is implied.'},
-  print:{title:'Take the plan\ninto the room.',description:'Print a facilitator run sheet with notes and minimums. Export JSON to keep a portable copy of your agenda.',footnote:'Cached offline use works after a successful first load. Browser storage is not a backup.',image:'print.jpg',alt:'Actual TempoFold print layout showing the synthetic workshop run sheet.',caption:'Actual print layout. Portable JSON exports the agenda, not live timer history.'}
-};
-const requestedKey=new URLSearchParams(location.search).get('slide')||'cover';
-const key=Object.hasOwn(slides,requestedKey)?requestedKey:'cover';
-const slide=slides[key];
-document.documentElement.dataset.slide=key;
-document.getElementById('gallery-logo').src=key==='cover'?'../brand/wordmark-reversed.svg':'../brand/wordmark.svg';
-for(const [id,value] of [['gallery-title',slide.title],['gallery-description',slide.description],['gallery-footnote',slide.footnote],['capture-caption',slide.caption]])document.getElementById(id).textContent=value;
-const img=document.getElementById('product-capture');img.src=`./source-captures/${slide.image}`;img.alt=slide.alt;
+const panels={cover:'Listing hero with actual planner and overtime timer.',planning:'Actual block editor with durations, minimums, protection and notes.',recovery:'Actual synthetic seven-minute recovery showing two exact cuts.',timer:'Actual overtime timer and a detail of target and projected finish.',print:'Actual printable facilitator run-sheet detail.',protected:'Actual ten-minute protected closing in the synthetic workshop.',square:'Square product promotion with actual recovery preview.',landscape:'Landscape product promotion with actual recovery preview.',portrait:'Portrait product promotion with actual recovery preview.'};
+const requested=new URLSearchParams(location.search).get('slide')||'cover';
+const key=Object.hasOwn(panels,requested)?requested:'cover';
+const path=`./source/${key}.svg`;
+document.getElementById('artwork').src=path;
+document.getElementById('artwork').alt=panels[key]+' Actual screens with synthetic examples.';
+document.getElementById('download-artwork').href=path;

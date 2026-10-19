@@ -1,0 +1,83 @@
+{
+  "cover": {
+    "size": [
+      1600,
+      900
+    ],
+    "output": "images/01-cover.jpg",
+    "label": "01 · Listing hero",
+    "alt": "TempoFold workshop planner, actual synthetic agenda and live overtime timer."
+  },
+  "planning": {
+    "size": [
+      1600,
+      900
+    ],
+    "output": "images/03-planning.jpg",
+    "label": "02 · Plan and protect",
+    "alt": "Actual editor showing duration, minimum, protected setting and facilitator notes."
+  },
+  "recovery": {
+    "size": [
+      1600,
+      900
+    ],
+    "output": "images/02-recovery.jpg",
+    "label": "03 · Exact recovery",
+    "alt": "Actual seven-minute recovery preview, with five minutes and two minutes reclaimed from future flexible blocks."
+  },
+  "timer": {
+    "size": [
+      1600,
+      900
+    ],
+    "output": "images/04-timer.jpg",
+    "label": "04 · Live timer",
+    "alt": "Actual overtime timer with manual advance and a detail of target and projected finish."
+  },
+  "print": {
+    "size": [
+      1600,
+      900
+    ],
+    "output": "images/05-run-sheet.jpg",
+    "label": "05 · Printable run sheet",
+    "alt": "Actual print-layout detail with planning times, facilitator notes and minimums."
+  },
+  "protected": {
+    "size": [
+      1600,
+      900
+    ],
+    "output": "promo/06-protected.jpg",
+    "label": "Extra · Protected closing",
+    "alt": "Actual protected ten-minute Commit and close block in a synthetic workshop."
+  },
+  "square": {
+    "size": [
+      1080,
+      1080
+    ],
+    "output": "social/tempofold-square-1080.jpg",
+    "label": "Social · Square 1080 × 1080",
+    "alt": "Square TempoFold promotion with actual recovery table and synthetic seven-minute example."
+  },
+  "landscape": {
+    "size": [
+      1200,
+      630
+    ],
+    "output": "social/tempofold-landscape-1200x630.jpg",
+    "label": "Social · Landscape 1200 × 630",
+    "alt": "Landscape TempoFold promotion showing exact recovery cuts in the actual app."
+  },
+  "portrait": {
+    "size": [
+      1080,
+      1350
+    ],
+    "output": "social/tempofold-portrait-1080x1350.jpg",
+    "label": "Social · Portrait 1080 × 1350",
+    "alt": "Portrait TempoFold promotion with a large actual recovery preview and clearly identified synthetic example."
+  }
+}
