@@ -16,7 +16,7 @@ Each JPEG is exactly 1600 × 900 and below 5 MB. Upload these five files for the
 | images/04-timer.jpg | Actual overtime, manual advance, target and projected finish |
 | images/05-run-sheet.jpg | Actual printable run-sheet detail with notes and minimums |
 
-The JPEG paths remain stable. These are revised compositions, not renamed copies of the previous images. The immutable v1.1.0 GitHub release retains the previous package for comparison.
+The JPEG paths remain stable. These are revised compositions, not renamed copies of the previous images. The published v1.1.0 GitHub release retains the previous package for comparison.
 
 ## Additional promotional formats
 
@@ -49,6 +49,8 @@ The final command renders the contact sheet from the finished JPEGs. The app its
 
 ## Listing copy and publication status
 
-`listing-fields.json` contains the complete field package and nine FAQs. `description.md` is the formatted long description. Preparing these images is not evidence that they were uploaded to Z2H. The existing draft's gallery remains empty because browser file access blocked the upload. Do not retry that denied route or change its permission settings.
+`listing-fields.json` contains the complete field package and nine FAQs. `description.md` is the formatted long description. The [TempoFold listing](https://zerotohundred.ai/listings/tempofold-sbp9lh) was verified live on October 21, 2026 with five images and an intentional $10 asking price. The source and hosted planner remain independently available free under MIT; a marketplace purchase is not required to access them.
 
-No paid asking price, maintenance commitment or response-time promise is added. The marketplace agreements and a supported free/open-source publication route remain unresolved. Verify Arya's personal account before any authorized future draft edit. The source remains independently available under MIT.
+The listing and these prepared packages are separate surfaces. A prepared image or archive is not proof of a new upload, and the marketplace's stored source bundle is not claimed to match the latest main commit. The published v1.1.0 release preserves the application and earlier brand/listing package; `marketing-kit-v1` preserves the current nine-image promotional kit.
+
+The paid marketplace offer has separate transaction terms. This kit does not accept agreements, make ownership attestations or alter the price. No paid support, maintenance commitment or response-time promise is included. Original source and artwork retain MIT; the font and outlined lettering retain OFL 1.1 and their notices.

@@ -1,60 +1,121 @@
-# TempoFold
+<p align="center">
+  <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="./brand/wordmark-reversed.svg">
+    <img src="./brand/wordmark.svg" width="305" height="64" alt="TempoFold">
+  </picture>
+</p>
 
-Plan and run a workshop on one device. When it runs late, preview exactly which future blocks can shorten while protected blocks keep their time.
+<h1 align="center">Make time for the ending.</h1>
 
-TempoFold is original MIT-licensed software by Arya Rashid, built with AI assistance. It has no runtime dependencies, account, backend, paid API, analytics or cloud uploads. All examples are synthetic.
+<p align="center">Plan your workshop. See exactly what can flex when the room runs late.</p>
 
-[Open the live demo](https://aryarashid.github.io/tempofold/) or [browse the source](https://github.com/aryarashid/tempofold).
+<p align="center">
+  <a href="https://aryarashid.github.io/tempofold/">Try the live planner</a> ·
+  <a href="#quickstart">Run locally</a> ·
+  <a href="#screenshots">See the product</a> ·
+  <a href="./docs/usage.md">User guide</a>
+</p>
 
-![TempoFold: running late? See what can flex. Actual planner with a synthetic workshop.](./marketplace/images/01-cover.jpg?v=promo1)
+![TempoFold workshop planner: an agenda beside an overtime timer. Actual app screens with a synthetic workshop.](./marketplace/images/01-cover.jpg)
 
-Browse the [product and social image gallery](./marketplace/), [all nine images on one contact sheet](./marketplace/contact-sheet.jpg), or the [brand kit](./brand/README.md). Five listing images, a protected-time panel and three social formats use actual screens with synthetic examples.
+**TempoFold is a small workshop planner and facilitator timer for one device.** Set durations, minimums and protected blocks, then preview exact cuts to future flexible blocks before applying them. No block changes without your approval.
 
-## Run it
+Original software by [Arya Rashid](https://github.com/aryarashid), built with AI assistance. **Free MIT source, no account, no backend and no npm runtime dependencies.** Workshop data stays in your browser; there are no analytics or cloud uploads. All examples and screenshots use synthetic content.
 
-Install Node.js 22 or later, then run:
+## What you can do
+
+- **Plan the flow.** Edit blocks, categories, facilitator notes, durations and minimums; reorder with explicit controls.
+- **Protect important time.** Keep a welcome, accessibility break or closing at its full duration by marking it protected.
+- **Recover time visibly.** Review each proposed before-and-after cut and any time that cannot be recovered. Apply or cancel, with one recovery undo snapshot.
+- **Run the room.** Pause, resume and advance the timer yourself. Target and projected finish remain visible; saved timestamps survive a reload.
+- **Take the plan with you.** Import or export validated JSON and print a facilitator run sheet with notes, minimums and protected status.
+- **Prepare for offline use.** After the first successful load and cache installation, the app can reload offline. Check its offline status before disconnecting.
+
+## Quickstart
+
+The [hosted planner](https://aryarashid.github.io/tempofold/) is ready to use without installation. For a local copy, install **Node.js 22 or later** and Git:
 
 ```sh
+git clone https://github.com/aryarashid/tempofold.git
+cd tempofold
 npm ci
 npm start
 ```
 
-Open `http://127.0.0.1:4173`. No build step is required. Run `npm run check` for syntax checks and the Node test suite. To use another port, set `PORT=4174 npm start`. The development server binds to this computer only. Serve the static files over HTTPS for a public deployment. Service workers require HTTPS or localhost. Opening `index.html` directly from disk does not support module loading or offline caching.
+Open **http://127.0.0.1:4173**. There is no build step. The server binds only to this computer; use `PORT=4174 npm start` for another port. A public static deployment needs HTTPS for service workers. Opening `index.html` directly from disk does not support module loading or offline caching.
 
-## Use it
+### Try a complete workflow
 
-Choose a synthetic example or a blank agenda. Edit block titles, categories, durations, minimums and facilitator notes. Move blocks with the up and down buttons. Protect any block that must keep its full duration. The run-sheet start time labels the printable plan. It does not schedule the live timer.
+1. Choose **60-minute workshop** to load the synthetic agenda, From ideas to a shared plan.
+2. Inspect block durations, minimums and protected time. Before starting, preview a **7-minute recovery**: Frame the challenge changes from 10 to 7 minutes, and Explore possibilities from 15 to 11. The protected closing keeps all 10 minutes.
+3. Apply the preview to make a 53-minute agenda, then Undo to restore 60 minutes.
+4. Start the workshop, pause or advance manually, and export JSON or print the run sheet.
 
-Start workshop sets the target finish to the current time plus the total agenda duration. The timer never advances a block automatically. Next block records actual elapsed time and starts the next block. Finish workshop records the finish time. Pausing stops the block timer while the finish target stays fixed. A pause can therefore create delay. Timers use saved timestamps instead of counting animation frames, so background tabs and reload do not restart them. Device sleep counts as elapsed time when running. Keep the system clock accurate.
+During a running session, recovery only considers future flexible blocks. Current, completed and protected blocks keep their duration. The [user guide](./docs/usage.md) explains timer targets, pauses, undo, imports and storage recovery in detail.
 
-Preview recovery accepts a requested number of minutes and allocates cuts in agenda order. Only future flexible blocks are eligible during a session. Before a session, all flexible blocks are eligible. Each cut stops at that block's minimum. The preview lists exact before and after durations and any unresolved time. Apply uses those exact cuts. Time spent reviewing can create further delay. Nothing silently shrinks the current, completed or protected blocks.
+### Included examples
 
-Undo restores the agenda before the last recovery, including notes and metadata. Undo remains available across a reload until you advance to the next block, edit the agenda, replace it or reset the timer. Reset timer clears live history and keeps current agenda durations, including recovery changes. Export first if you want to preserve a separate plan.
+Choose these in the app, or download the JSON and import it:
 
-Import and export use versioned JSON. Import a file or paste its contents into the import dialog. Export includes the agenda only, not the live timer or its history. Import validates the whole file before asking to replace current work. Invalid imports leave current work untouched. Import permits 1 to 100 blocks, a total duration up to 24 hours, at most four hours per block, and a 512 KB UTF-8 file. Titles and notes render as text. Unknown fields, duplicate IDs, unsupported categories and invalid durations fail validation. Find portable originals in [examples](./examples).
+| Example | Duration | Useful for |
+| --- | --- | --- |
+| [From ideas to a shared plan](./examples/workshop.json) | 60 minutes | Workshop planning and exact recovery previews |
+| [Product demo](./examples/product-demo.json) | 12 minutes | A short, timed rehearsal |
+| [Community listening session](./examples/community-session.json) | 45 minutes | Facilitated discussion with protected opening and closing |
 
-Print run sheet uses the current agenda and its planning start time. Notes, categories, protected status and minimums appear in the print layout. It does not print live history or a dynamically projected schedule.
+These are fictional starting points, not tested facilitation methods or customer results.
 
-## Privacy, offline use and limitations
+## Screenshots
 
-The browser's local storage holds the current agenda, timer and one recovery undo snapshot. Export JSON for a backup. Private browsing, storage restrictions or cleared browser data can prevent saving. The app reports save failures. Corrupt saved data is retained until you explicitly replace it; download that data before doing so. Use one tab per workshop. A second tab changing saved data pauses writes in this tab to avoid overwriting the other tab's work.
+Actual app screens appear in each composition below. Click an image to inspect it at full size. All agenda content is synthetic.
 
-After the first successful load and service-worker installation, app files cache for offline use. Check the offline status under the timer before disconnecting. A first visit requires a connection. Offline caching does not back up your agenda. Updates activate after existing tabs close, preserving one consistent cached version during a session. Browsers may evict caches. See [verification](./docs/verification.md) for tested environments and limits.
+| Plan and protect | Preview exact cuts |
+| --- | --- |
+| [![Block editor with duration, minimum, protected setting and facilitator notes.](./marketplace/images/03-planning.jpg)](./marketplace/images/03-planning.jpg) | [![Seven-minute recovery preview: five minutes from Explore possibilities and two from Take a breath.](./marketplace/images/02-recovery.jpg)](./marketplace/images/02-recovery.jpg) |
+| **Run a timed session** | **Print a run sheet** |
+| [![Facilitator timer showing overtime, pause and next-block controls, target finish and projected finish.](./marketplace/images/04-timer.jpg)](./marketplace/images/04-timer.jpg) | [![Printable six-block workshop agenda with planning times, notes, minimums and protected status.](./marketplace/images/05-run-sheet.jpg)](./marketplace/images/05-run-sheet.jpg) |
 
-This is a single-device planning and rehearsal tool. There is no collaboration, cloud sync, calendar integration, audio alert, broadcast output, multi-device clock synchronization, AI generation or remote control. It does not choose which ideas are expendable or decide whether an accessibility break can be shortened. The facilitator sets minimums and approves every change. For longer sessions the timer displays hours. Agenda times that cross midnight display +1 day. Timing uses the device clock, not a trusted network clock.
+<details>
+<summary>View the full planner screenshot</summary>
 
-Keyboard users can reach every action with Tab and activate buttons with Enter or Space. Escape closes dialogs. The timer does not announce every second to screen readers. Protected, flexible, paused, overtime and completed states have text labels in addition to color. There are no global keyboard shortcuts that interrupt note entry.
+![TempoFold planner with a six-block 60-minute workshop, protected and flexible labels, import/export/print controls and a ready facilitator timer.](./marketplace/source-captures/planner.jpg)
+
+</details>
+
+[Browse all nine product and social images](https://aryarashid.github.io/tempofold/marketplace/) · [View the brand kit](./brand/README.md) · [Download the complete promotional kit](https://github.com/aryarashid/tempofold/releases/download/marketing-kit-v1/tempofold-promotional-kit-v1.zip)
+
+## Privacy and practical limits
+
+Use **one tab on one device per workshop**. There is no collaboration, cloud sync, calendar integration, audio alarm, broadcast output or remote control. The facilitator decides what can shorten and approves every recovery.
+
+Local storage is convenient, not a backup. Export JSON before clearing browser data or replacing an agenda. Private browsing and storage restrictions can prevent saving. Offline use requires a successful first load and cache installation, and browsers may evict caches.
+
+The timer uses the device clock. Running time includes device sleep; pause stops the block timer while the finish target stays fixed, so pausing can create delay. Blocks never advance automatically. Export contains the agenda, not live timer history.
+
+Imports allow 1–100 blocks, up to 24 hours total, four hours per block and 512 KB of UTF-8 JSON. Invalid imports leave current work untouched. [Read the full behavior and limits](./docs/usage.md).
+
+Keyboard users can reach actions with Tab and activate buttons with Enter or Space; Escape closes dialogs. Status labels supplement color, and the timer does not announce every second. Mobile and keyboard checks are documented in [verification](./docs/verification.md); no independent assistive-technology audit is claimed.
+
+## Develop and contribute
+
+```sh
+npm run check
+```
+
+This runs JavaScript syntax checks and the focused Node test suite. It does not install a browser or run a build. The [verification record](./docs/verification.md) separates automated checks from browser, mobile, print and offline checks.
+
+Start with the [contribution guide](./CONTRIBUTING.md), [architecture and deployment notes](./docs/architecture.md), or [user guide](./docs/usage.md). The app is plain HTML, CSS and JavaScript; `src/core.js` holds validation, timing and recovery logic, while `src/app.js` connects it to the browser.
+
+For a reproducible bug or usage question, [open a GitHub issue](https://github.com/aryarashid/tempofold/issues). Use synthetic examples and omit private workshop content. Support is community-based, with no response-time promise, paid support or maintenance agreement. See [support guidance](./CONTRIBUTING.md#support-and-security).
 
 ## Background and alternatives
 
-The project focuses on transparent constrained recovery in a small offline browser app. Demand evidence is moderate and does not establish market size or willingness to pay. Facilitators discuss how to manage overtime in the [Ontime community](https://github.com/cpvalente/ontime/discussions/1791). The [Collaborative Modeling Workshop Preparation Canvas](https://github.com/ddd-crew/como-prep-canvas) discusses workshop preparation. Those sources informed the problem selection only. TempoFold does not reproduce their code, text, canvas, design or assets.
+The focus is transparent, constrained recovery in a small browser app. Demand evidence is moderate and does not establish market size or willingness to pay. Facilitators discuss overtime in the [Ontime community](https://github.com/cpvalente/ontime/discussions/1791), while the [Collaborative Modeling Workshop Preparation Canvas](https://github.com/ddd-crew/como-prep-canvas) covers workshop preparation. These informed problem selection only; no code, text, canvas, design or assets were copied.
 
-[Ontime](https://www.getontime.no/) is a larger open-source event timing system with projected timings and production-oriented workflows. [SessionLab](https://www.sessionlab.com/) offers a broader workshop planner with automatic timings and time locks. TempoFold does not claim to invent event timers or replace those tools.
+[Ontime](https://www.getontime.no/) offers a larger open-source event timing system. [SessionLab](https://www.sessionlab.com/) provides a broader workshop planner. TempoFold does not claim to invent event timers or replace those tools.
 
-## License and contributions
+## License and distribution
 
-Original source, examples and artwork use the [MIT license](./LICENSE). The bundled Hanken Grotesk font and outlined wordmark lettering retain the SIL Open Font License 1.1. See [THIRD_PARTY_NOTICES.md](./THIRD_PARTY_NOTICES.md) and the [font license](./assets/fonts/OFL.txt). There are no npm runtime dependencies or copied templates. The lockfile records the zero-dependency project. No GPL Ontime code or CC-BY-SA canvas material is included.
+Original source, examples and artwork use the [MIT license](./LICENSE). You can use, modify, distribute and sell copies subject to its notice requirements. **No purchase is required to use this repository or the hosted planner.** The separately listed [Zero to Hundred offer](https://zerotohundred.ai/listings/tempofold-sbp9lh) is priced at $10 and has its own transaction terms; it is not required for access to the MIT source.
 
-Setup and product behavior are documented here. The [architecture guide](./docs/architecture.md) explains storage, timer behavior, deployment and rollback. The [listing package](./marketplace/README.md) contains factual copy, FAQs and upload-ready artwork. Support is through GitHub issues and community contributions, with no response-time promise or paid support agreement.
-
-Contributions should include a behavior test for timing, recovery or import changes. Keep original work and its notices attributable. Do not add telemetry or cloud services without an explicit product decision. Report security issues privately to the repository owner before publishing sensitive details.
+The bundled Hanken Grotesk font and outlined wordmark lettering retain **SIL Open Font License 1.1**. Keep [THIRD_PARTY_NOTICES.md](./THIRD_PARTY_NOTICES.md) and the [font license](./assets/fonts/OFL.txt) with redistributed files. There are no npm runtime dependencies or copied templates. Optional promotional authoring tools are documented separately in the [promotional kit](./marketplace/README.md).
